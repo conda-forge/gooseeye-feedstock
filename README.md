@@ -1,9 +1,9 @@
-About gooseeye
-==============
+About gooseeye-split
+====================
 
 Home: https://github.com/tdegeus/GooseEYE
 
-Package license: GPL3
+Package license: GPL-3.0-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/gooseeye-feedstock/blob/master/LICENSE.txt)
 
@@ -11,7 +11,7 @@ Summary: Evaluate several geometrical statistical measures on images.
 
 Development: https://github.com/tdegeus/GooseEYE
 
-Documentation: https://gooseeye.rtfd.io
+Documentation: https://GooseEYE.rtfd.io
 
 Library to evaluate several geometrical statistical measures on (ensembles of) 'images'
 (i.e. 1-D, 2-D, or 3-D matrices).
@@ -76,21 +76,22 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-gooseeye-green.svg)](https://anaconda.org/conda-forge/gooseeye) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gooseeye.svg)](https://anaconda.org/conda-forge/gooseeye) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gooseeye.svg)](https://anaconda.org/conda-forge/gooseeye) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gooseeye.svg)](https://anaconda.org/conda-forge/gooseeye) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-python--gooseeye-green.svg)](https://anaconda.org/conda-forge/python-gooseeye) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/python-gooseeye.svg)](https://anaconda.org/conda-forge/python-gooseeye) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/python-gooseeye.svg)](https://anaconda.org/conda-forge/python-gooseeye) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/python-gooseeye.svg)](https://anaconda.org/conda-forge/python-gooseeye) |
 
-Installing gooseeye
-===================
+Installing gooseeye-split
+=========================
 
-Installing `gooseeye` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `gooseeye-split` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `gooseeye` can be installed with:
+Once the `conda-forge` channel has been enabled, `gooseeye, python-gooseeye` can be installed with:
 
 ```
-conda install gooseeye
+conda install gooseeye python-gooseeye
 ```
 
 It is possible to list all of the versions of `gooseeye` available on your platform with:
@@ -138,17 +139,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating gooseeye-feedstock
-===========================
+Updating gooseeye-split-feedstock
+=================================
 
-If you would like to improve the gooseeye recipe or build a new
+If you would like to improve the gooseeye-split recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/gooseeye-feedstock are
+Note that all branches in the conda-forge/gooseeye-split-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
