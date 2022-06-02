@@ -11,7 +11,7 @@ source:
   sha256: 6e27843155740a95fe679b3e0e7e3173219c6010ce40b7cb9975781179318499
 
 build:
-  number: 1
+  number: 2
   script_env: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   skip: True  # [python_impl == 'pypy']
 
