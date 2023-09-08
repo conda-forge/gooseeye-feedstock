@@ -61,6 +61,7 @@ outputs:
         - make  # [unix]
         - ninja
       host:
+        - enstat >=0.9.7
         - numpy *
         - pip
         - pybind11
