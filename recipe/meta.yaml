@@ -72,6 +72,7 @@ outputs:
         - xtensor
         - xtensor-python
       run:
+        - enstat >=0.9.7
         - numpy *
         - python
 
