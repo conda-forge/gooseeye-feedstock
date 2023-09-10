@@ -1,6 +1,6 @@
 {% set org = "tdegeus" %}
 {% set name = "GooseEYE" %}
-{% set version = "0.6.3" %}
+{% set version = "0.7.1" %}
 
 package:
   name: {{ name|lower }}-split
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://github.com/{{ org }}/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 0639f355193bc80d873013058914206e494d6054a5f8224533552a7049d091e6
+  sha256: 27524d830d707bdb4a348c68ace4fb65015a162395018b5c927b7b9972f7b738
 
 build:
-  number: 3
+  number: 0
 
 outputs:
 
@@ -61,6 +61,7 @@ outputs:
         - make  # [unix]
         - ninja
       host:
+        - enstat >=0.9.7
         - numpy *
         - pip
         - pybind11
@@ -71,6 +72,7 @@ outputs:
         - xtensor
         - xtensor-python
       run:
+        - enstat >=0.9.7
         - numpy *
         - python
 
