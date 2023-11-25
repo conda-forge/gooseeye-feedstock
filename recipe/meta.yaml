@@ -39,7 +39,7 @@ outputs:
         - test -f ${PREFIX}/include/GooseEYE/GooseEYE.h  # [unix]
         - test -f ${PREFIX}/lib/cmake/GooseEYE/GooseEYEConfig.cmake  # [unix]
         - if not exist %LIBRARY_PREFIX%\include\GooseEYE\GooseEYE.h exit 1  # [win]
-        - if not exist %LIBRARY_PREFIX%\lib\cmake\GooseEYEConfig.cmake exit 1  # [win]
+        - if not exist %LIBRARY_PREFIX%\lib\cmake\GooseEYE\GooseEYEConfig.cmake exit 1  # [win]
 
   - name: python-gooseeye
 
