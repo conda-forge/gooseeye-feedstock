@@ -1,13 +1,11 @@
-{% set org = "tdegeus" %}
-{% set name = "GooseEYE" %}
 {% set version = "0.8.0" %}
 
 package:
-  name: {{ name|lower }}-split
+  name: gooseeye-split
   version: {{ version }}
 
 source:
-  url: https://github.com/{{ org }}/{{ name }}/archive/v{{ version }}.tar.gz
+  url: https://github.com/tdegeus/GooseEYE/archive/v{{ version }}.tar.gz
   sha256: f23f861b50201cd1bdfe06b5f66e28d6225638b124e4a11b00a7736a4424d900
 
 build:
@@ -15,7 +13,7 @@ build:
 
 outputs:
 
-  - name: {{ name|lower }}
+  - name: gooseeye
 
     script: install.sh  # [unix]
     script: install.bat  # [win]
@@ -29,19 +27,21 @@ outputs:
         - cmake
         - make  # [unix]
       host:
+        - prrng
         - xtensor
       run:
+        - prrng
         - xtensor
 
     test:
       commands:
-        - test -d ${PREFIX}/include/{{ name }}  # [unix]
-        - test -f ${PREFIX}/include/{{ name }}/{{ name }}.h  # [unix]
-        - test -f ${PREFIX}/lib/cmake/{{ name }}/{{ name }}Config.cmake  # [unix]
-        - if exist %LIBRARY_PREFIX%\include\{{ name }}\{{ name }}.h (exit 0) else (exit 1)  # [win]
-        - if exist %LIBRARY_PREFIX%\lib\cmake\{{ name }}Config.cmake (exit 0) else (exit 1)  # [win]
+        - test -d ${PREFIX}/include/GooseEYE  # [unix]
+        - test -f ${PREFIX}/include/GooseEYE/GooseEYE.h  # [unix]
+        - test -f ${PREFIX}/lib/cmake/GooseEYE/GooseEYEConfig.cmake  # [unix]
+        - if not exist %LIBRARY_PREFIX%\include\GooseEYE\GooseEYE.h exit 1  # [win]
+        - if not exist %LIBRARY_PREFIX%\lib\cmake\GooseEYEConfig.cmake exit 1  # [win]
 
-  - name: python-{{ name|lower }}
+  - name: python-gooseeye
 
     script: install_python.sh  # [unix]
     script: install_python.bat  # [win]
@@ -64,11 +64,13 @@ outputs:
         - enstat >=0.9.7
         - numpy *
         - pip
+        - prrng
         - pybind11
         - pybind11-abi
-        - python
+        - python >=3.6
         - scikit-build
-        - setuptools_scm
+        - setuptools >=45
+        - setuptools_scm >=6.2
         - xtensor
         - xtensor-python
       run:
@@ -78,15 +80,15 @@ outputs:
 
     test:
       imports:
-        - {{ name }}
+        - GooseEYE
       commands:
         - pip check
-        - python -c "import {{ name }}; assert {{ name }}.version() == '{{ version }}'"
+        - python -c "import GooseEYE; assert GooseEYE.version() == '{{ version }}'"
       requires:
         - pip
 
 about:
-  home: https://github.com/{{ org }}/{{ name }}
+  home: https://github.com/tdegeus/GooseEYE
   license: GPL-3.0-or-later
   license_family: GPL
   license_file: LICENSE
@@ -94,8 +96,8 @@ about:
   description: |
     Library to evaluate several geometrical statistical measures on (ensembles of) 'images'
     (i.e. 1-D, 2-D, or 3-D matrices).
-  doc_url: https://{{ name }}.rtfd.io
-  dev_url: https://github.com/{{ org }}/{{ name }}
+  doc_url: https://GooseEYE.rtfd.io
+  dev_url: https://github.com/tdegeus/GooseEYE
 
 extra:
   recipe-maintainers:
