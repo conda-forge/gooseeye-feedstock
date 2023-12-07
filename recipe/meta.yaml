@@ -1,4 +1,4 @@
-{% set version = "0.8.1" %}
+{% set version = "0.9.0" %}
 
 package:
   name: gooseeye-split
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/tdegeus/GooseEYE/archive/v{{ version }}.tar.gz
-  sha256: da81c06d6a27e4d7e04c5919ced07940d8561a328dd336f0759f9641597c0f03
+  sha256: 7da3e3fd8d02d11f3898726a04f102f56491bdb34cece2793d2c2c9b7d680ce1
 
 build:
   number: 0
