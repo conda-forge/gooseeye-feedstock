@@ -1,4 +1,4 @@
-{% set version = "0.9.0" %}
+{% set version = "0.9.1" %}
 
 package:
   name: gooseeye-split
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/tdegeus/GooseEYE/archive/v{{ version }}.tar.gz
-  sha256: 7da3e3fd8d02d11f3898726a04f102f56491bdb34cece2793d2c2c9b7d680ce1
+  sha256: 801ae8bf4a8030171643cc81e6a09d84d08f45fdcb0d31801469769c7e823656
 
 build:
   number: 0
@@ -24,6 +24,7 @@ outputs:
     requirements:
       build:
         - {{ compiler('cxx') }}
+        - {{ stdlib("c") }}
         - cmake
         - make  # [unix]
       host:
@@ -57,6 +58,7 @@ outputs:
         - numpy *                             # [build_platform != target_platform]
         - setuptools_scm                      # [build_platform != target_platform]
         - {{ compiler('cxx') }}
+        - {{ stdlib("c") }}
         - cmake
         - make  # [unix]
         - ninja
